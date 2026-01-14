@@ -33,8 +33,7 @@
 ---
 
 ## Repo Structure
-
-/src
+```tcl
 LEDDriver.sv        # given 16x16 display driver (unchanged)
 clock_divider.sv    # 32-bit ripple divider
 Sprite.sv           # player grid (one-hot row/col → 2D grid)
@@ -47,7 +46,7 @@ DE1_SoC.sv          # top: wiring, clocks, LEDDriver, HEX, buzzer
 *_testbench.sv      # unit testbenches (Sprite, SPIKE, Playtime, Beeper)
 /sim
 *.do                # ModelSim scripts (e.g., SPIKE_lab.do, playtime_lab.do)
-
+```
 ---
 
 ## How It Works (short)
@@ -71,4 +70,6 @@ vlog ./src/clock_divider.sv \
 vlog ./test/Sprite_testbench.sv
 vsim -voptargs="+acc" Sprite_testbench
 run -all
+
+```
 
